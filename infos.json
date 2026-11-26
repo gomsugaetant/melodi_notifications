@@ -1,0 +1,13 @@
+{
+  "name": "melodi_notifications",
+  "title": "MELODI Notifications",
+  "version": "1.0.0",
+  "description": "Centre de notifications unifié In-App avec cloche temps réel et gestion des alertes inter-modules.",
+  "author": "BYT3LAB",
+  "category": "productivity",
+  "icon": "notifications",
+  "depends": [
+    "base"
+  ],
+  "depends_python": []
+}

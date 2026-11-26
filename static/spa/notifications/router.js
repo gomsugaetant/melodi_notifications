@@ -1,0 +1,2 @@
+import{MelodiRouter as t}from"/static/base/melodiJS/index.js";const n={template:"<div></div>"},a=new t({mode:"hash",routes:[{path:"/",name:"notifications-all",component:n},{path:"/all",name:"notifications-all-tab",component:n},{path:"/unread",name:"notifications-unread",component:n},{path:"/read",name:"notifications-read",component:n},{path:"/archived",name:"notifications-archived",component:n},{path:"*",name:"notifications-fallback",component:n}]});export{a as router};
+//# sourceMappingURL=router.js.map

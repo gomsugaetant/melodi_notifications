@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="{{ _url('static', {'module': 'melodi_notifications', 'path': ['ts', 'bell.css']}) }}">
+
+<div id="melodi-notif-bell-app"
+     class="dropdown melodi-notif-bell-wrapper"
+     data-user-id="{{ current_user.id if current_user and current_user.id is defined else (current_user['id'] if current_user and 'id' in current_user else '') }}"
+     data-spa-url="/admin/melodi_notifications/"
+     data-title="{{ t('notifications.title', 'Notifications') }}"
+     data-up-to-date="{{ t('notifications.up_to_date', 'À jour') }}"
+     data-mark-all="{{ t('notifications.mark_all_read', 'Tout marquer comme lu') }}"
+     data-empty="{{ t('notifications.empty_desc', 'Vous êtes à jour. Les nouvelles alertes apparaîtront ici.') }}"
+     data-view-all="{{ t('notifications.view_all', 'Voir toutes les notifications') }}">
+    <button class="ds-icon-btn ds-icon-btn-ghost position-relative melodi-notif-trigger"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-label="{{ t('notifications.title', 'Notifications') }}">
+        <img src="/static_base_icons?name=notifications_none" alt="" width="20" height="20">
+    </button>
+    <div class="dropdown-menu dropdown-menu-end ds-notification-menu melodi-notif-dropdown shadow-sm border mt-2 p-0">
+        <div class="p-3">
+            <div class="ds-skeleton-line mb-2" style="width: 60%; height: 16px;"></div>
+            <div class="ds-skeleton-line mb-2" style="width: 100%; height: 42px;"></div>
+            <div class="ds-skeleton-line" style="width: 100%; height: 42px;"></div>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="{{ _url('static', {'module': 'melodi_notifications', 'path': ['ts', 'bell.js']}) }}"></script>

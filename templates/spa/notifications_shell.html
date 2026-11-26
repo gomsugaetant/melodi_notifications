@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="{{ _url('static', {'module': 'melodi_notifications', 'path': ['spa', 'notifications', 'notifications.css']}) }}">
+
+<div class="container-fluid py-3 px-3 px-md-4 melodi-notifications-spa">
+  <div id="melodi-notifications-app"
+       data-title="{{ t('notifications.title', 'Notifications') }}"
+       data-subtitle="{{ t('notifications.subtitle', 'Suivez vos alertes système, validations et événements en temps réel.') }}"
+       data-mark-all="{{ t('notifications.mark_all_read', 'Tout marquer comme lu') }}"
+       data-refresh="{{ t('notifications.refresh', 'Actualiser') }}"
+       data-filter-all="{{ t('notifications.filter_all', 'Toutes') }}"
+       data-filter-unread="{{ t('notifications.filter_unread', 'Non lues') }}"
+       data-filter-read="{{ t('notifications.filter_read', 'Lues') }}"
+       data-filter-archived="{{ t('notifications.filter_archived', 'Archivées') }}"
+       data-search-placeholder="{{ t('notifications.search_placeholder', 'Rechercher une notification...') }}"
+       data-severity-all="{{ t('notifications.severity_all', 'Toutes les sévérités') }}"
+       data-severity-info="{{ t('notifications.severity_info', 'Info') }}"
+       data-severity-success="{{ t('notifications.severity_success', 'Succès') }}"
+       data-severity-warning="{{ t('notifications.severity_warning', 'Avertissement') }}"
+       data-severity-error="{{ t('notifications.severity_error', 'Erreur') }}"
+       data-empty-title="{{ t('notifications.empty_title', 'Aucune notification') }}"
+       data-empty-desc="{{ t('notifications.empty_desc', 'Vous êtes à jour. Les nouvelles alertes apparaîtront ici.') }}"
+       data-mark-read="{{ t('notifications.mark_read', 'Marquer comme lu') }}"
+       data-mark-unread="{{ t('notifications.mark_unread', 'Marquer comme non lu') }}"
+       data-archive="{{ t('notifications.archive', 'Archiver') }}"
+       data-unarchive="{{ t('notifications.unarchive', 'Désarchiver') }}"
+       data-delete="{{ t('notifications.delete', 'Supprimer') }}"
+       data-open-action="{{ t('notifications.open_action', 'Ouvrir') }}"
+       data-load-more="{{ t('notifications.load_more', 'Charger plus') }}">
+    {# Squelette de chargement serveur (zéro FOUC avant hydratation MelodiJS) #}
+    <div class="ds-card p-3 p-md-4 shadow-sm">
+      <div class="d-flex flex-column flex-md-row justify-content-between gap-3 mb-4">
+        <div>
+          <div class="ds-skeleton-line mb-2" style="width: 180px; height: 28px;"></div>
+          <div class="ds-skeleton-line" style="width: 260px; height: 16px;"></div>
+        </div>
+        <div class="ds-skeleton-line" style="width: 160px; height: 40px;"></div>
+      </div>
+      <div class="ds-skeleton-line mb-3" style="width: 100%; height: 44px;"></div>
+      <div class="ds-skeleton-line mb-2" style="width: 100%; height: 84px;"></div>
+      <div class="ds-skeleton-line mb-2" style="width: 100%; height: 84px;"></div>
+      <div class="ds-skeleton-line" style="width: 100%; height: 84px;"></div>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="{{ _url('static', {'module': 'melodi_notifications', 'path': ['spa', 'notifications', 'app.js']}) }}"></script>

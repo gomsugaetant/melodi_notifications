@@ -1,0 +1,83 @@
+// Mobile-first styles for MELODI Notifications SPA
+.melodi-notifications-spa {
+  max-width: 1080px;
+  margin: 0 auto;
+
+  // Barre d'onglets scrollable horizontalement sur mobile
+  .notif-tabs-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .notif-tab-btn {
+      flex: 0 0 auto;
+      min-height: 40px;
+      padding: 0.45rem 0.9rem;
+      border-radius: 9999px;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  }
+
+  // Carte de notification mobile-first
+  .notif-card {
+    position: relative;
+    border-left: 4px solid var(--ds-color-primary, #2563eb);
+    transition: transform 0.12s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+
+    &.sev-success { border-left-color: var(--ds-color-success, #16a34a); }
+    &.sev-warning { border-left-color: var(--ds-color-warning, #d97706); }
+    &.sev-error { border-left-color: var(--ds-color-danger, #dc2626); }
+
+    &.is-unread {
+      background-color: var(--ds-color-primary-subtle, rgba(37, 99, 235, 0.04));
+    }
+
+    &.is-read {
+      opacity: 0.88;
+    }
+  }
+
+  .notif-actions-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+
+    .ds-btn {
+      min-height: 38px;
+      flex: 1 1 auto;
+      justify-content: center;
+    }
+  }
+}
+
+// Adaptation progressive tablette / desktop
+@media (min-width: 768px) {
+  .melodi-notifications-spa {
+    .notif-tabs-scroll {
+      flex-wrap: wrap;
+      overflow-x: visible;
+    }
+
+    .notif-actions-row {
+      margin-top: 0;
+      justify-content: flex-end;
+
+      .ds-btn {
+        min-height: 32px;
+        flex: 0 0 auto;
+      }
+    }
+  }
+}
